@@ -1,0 +1,16 @@
+<div class="search-input">
+   <app-search-input (onSelect)="onAddMovie($event)"></app-search-input>
+</div>
+
+<div class="action-block">
+   <button mat-raised-button color="primary" (click)="onSaveList()">Save all to file</button>
+</div>
+
+<mat-nav-list>
+   <mat-list-item *ngFor="let item of getMovies() | async" [routerLink]="['/movie', item.imdbID]">
+      <span matLine>{{item.Title}}</span>
+      <button mat-icon-button (click)="onDeleteItem($event, item)">
+         <mat-icon>delete</mat-icon>
+      </button>
+   </mat-list-item>
+</mat-nav-list>

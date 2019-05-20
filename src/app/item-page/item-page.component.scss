@@ -1,0 +1,22 @@
+.movie-info {
+    &-header {
+        display: flex;
+        // justify-content: space-between;
+    }
+    
+    &-rate {
+        display: flex;
+        justify-content: space-between;
+        min-width: 20rem;
+    }
+
+    &-poster {
+        padding: 1rem;
+    }
+}
+
+
+
+.info-table {
+    width: 100%;
+}

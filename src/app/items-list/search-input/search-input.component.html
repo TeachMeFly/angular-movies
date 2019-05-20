@@ -1,0 +1,8 @@
+<mat-form-field class="full-width">
+  <input type="text" placeholder="Search movie" aria-label="Movie" matInput [formControl]="searchMovieControl" [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelected($event)">
+    <mat-option *ngFor="let option of filteredMovies | async" [value]="option">
+      {{option.Title}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
